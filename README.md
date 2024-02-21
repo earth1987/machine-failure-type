@@ -68,11 +68,11 @@ Predicting machine failure through machine learning is paramount for efficient i
   
 * The final random forest model utilised SMOTE. The below classification report and confusion matrix shows the test set performance after retraining with the entire training set. The macro F1, precision and recall scores across the failure classes are $0.37$, $0.28$ and $0.67$ respectively.
 
-    *Where class $0$ is 'Heat Dissipation Failure', class $1$ is 'No Failure', class $2$ is 'Overstrain Failure', class $3$ is 'Power Failure', class $4$ is 'Random Failures', and class $5$ is 'Tool Wear Failure'.*
-
 <img src="notebooks/figures/classification_report.png" align="center" width="300" />
 
 <img src="notebooks/figures/confusion_matrix.png" align="center" width="500" />
+
+*Where class $0$ is 'Heat Dissipation Failure', class $1$ is 'No Failure', class $2$ is 'Overstrain Failure', class $3$ is 'Power Failure', class $4$ is 'Random Failures', and class $5$ is 'Tool Wear Failure'.*
 
 ## Conclusion
 
