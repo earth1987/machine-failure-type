@@ -53,18 +53,16 @@ Predicting machine failure through machine learning is paramount for efficient i
 
 * It is assumed the cost of a false negative prediction (incorrectly identifying something as okay when it has failed) outweighs the cost of a false positive prediction. The primary and secondary metrics are therefore macro-recall and macro-precision across the failure classes respectively.
 
-* The goal was to maximise macro-recall with a nominal constraint of $50\%$ for macro-precision across the failure classes.
-
-* A custom macro-F1 score was used during hyperparameter optimisation. This calculated macro-F1 score across the different failure classes. It helped balance precision and recall with a view to preventing unnecessary disruptions while maintaining a sufficiently high recall for effective fault detection.
+* The goal was to maximise macro-recall with a nominal constraint of $50$% for macro-precision across the failure classes. A corresponding custom macro-F1 score was used during hyperparameter optimisation. It helped balance precision and recall with a view to preventing unnecessary disruptions while maintaining a sufficiently high recall for effective fault detection.
 
 ## Model selection
 
 * Random forest models were optimised with and without SMOTE. The below table shows 5-fold cross validated performance. 
 
-| Model | Macro-F1 | Macro-Precision | Macro-Recall |
-|----------|----------|----------|----------|
-| Random Forest  | $0.39 \pm 0.03$   | $0.39 \pm 0.03$ | $0.39 \pm 0.03$ |
-| Random Forest with SMOTE  | $0.39 \pm 0.01$    | $0.30 \pm 0.01$ | $0.65 \pm 0.07$ |
+    | Model | Macro-F1 | Macro-Precision | Macro-Recall |
+    |----------|----------|----------|----------|
+    | Random Forest  | $0.39 \pm 0.03$   | $0.39 \pm 0.03$ | $0.39 \pm 0.03$ |
+    | Random Forest with SMOTE  | $0.39 \pm 0.01$    | $0.30 \pm 0.01$ | $0.65 \pm 0.07$ |
 
 * The goal was to maximise recall whilst ensuring a precision of at least $0.5$. Unfortunately, it was not possible to achieve this level of precision without SMOTE. Furthermore, the application of SMOTE appeared to improve recall but lower precision.
   
@@ -72,7 +70,7 @@ Predicting machine failure through machine learning is paramount for efficient i
 
     *Where class $0$ is 'Heat Dissipation Failure', class $1$ is 'No Failure', class $2$ is 'Overstrain Failure', class $3$ is 'Power Failure', class $4$ is 'Random Failures', and class $5$ is 'Tool Wear Failure'.*
 
-<img src="notebooks/figures/classification_report.png" align="center" width="500" />
+<img src="notebooks/figures/classification_report.png" align="center" width="300" />
 
 <img src="notebooks/figures/confusion_matrix.png" align="center" width="500" />
 
